@@ -100,7 +100,9 @@ h1{
     font-weight: 600;
     font-size: 3em;
     animation: title-fade-in 0.5s ease 0s 1 normal both;
+    margin: 0 0.3em 0 0;
 }
+
 main{
     background-color: var(--background-color);
     box-sizing: border-box;/* width and height includes padding */
@@ -111,6 +113,7 @@ main{
     padding: 3em;
     height: 100vh;
 }
+
 section{
     display: flex;
     flex-direction: row wrap;
@@ -133,6 +136,9 @@ section{
     height: auto;
 }
 #row-3{
+    display: flex;
+    flex-direction: row wrap;
+    justify-content: space-between;
     box-sizing: border-box;
     height: auto;
     max-height: fit-content;
@@ -164,6 +170,7 @@ section{
 #column-1 div, #column-2 div{
     padding: 0 0 2.5em 0;
 }
+
 #row-1 p{
     box-sizing: border-box;
     display: block;
@@ -188,10 +195,12 @@ section{
     color: var(--medium-grey);
 
 }
+
 .link-list{
     display: flex;
     flex-direction: column;
 }
+
 .link-list a{
     font-family: metropolis;
     font-weight: 300;
@@ -212,12 +221,14 @@ section{
     89%{text-decoration-color: greenyellow;}
     100%{text-decoration-color: turquoise;} /* return to beginning color for seamless loop */
 }
+
 .link-list a:hover{
     text-decoration: underline;
-    text-decoration-color: blue;
+    text-decoration-color: turquoise;
     text-decoration-thickness: 3px;
     animation: hover-underline 6s ease-in-out infinite; /* call interactive animation */
 }
+
 footer p{
     font-family: metropolis;
     font-size: 1.25em;
@@ -226,4 +237,25 @@ footer p{
     color: var(--medium-grey);
     padding: 0.75em;
     max-width: fit-content;
+}
+footer a{
+    font-family: metropolis;
+    font-weight: 300;
+    font-size: 1.25em;
+    text-decoration: none;
+    color: var(--dark-type);
+    box-sizing: border-box;
+    display: block;
+}
+#contact-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-decoration: none;
+}
+#contact-container a:hover{
+    text-decoration: underline;
+    text-decoration-color: turquoise;
+    text-decoration-thickness: 3px;
+    animation: hover-underline 6s ease-in-out infinite; /* call interactive animation */
 }
