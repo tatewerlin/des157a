@@ -1,8 +1,26 @@
+:root{
+    --background-color: #f2f6f7;
+    --medium-grey: #898989;
+    --dark-type: #101010;
+}
+
 /* fonts */
 @font-face{
     font-family: metropolis;
     src: url(fonts/metropolis-black.woff) format('woff');
     font-weight: 900;
+    font-style: normal;
+}
+@font-face {
+    font-family: metropolis;
+    src: url(fonts/metropolis-bold.woff2) format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+@font-face {
+    font-family: metropolis;
+    src: url(fonts/metropolis-semibold.woff2) format('woff2');
+    font-weight: 600;
     font-style: normal;
 }
 @font-face {
@@ -17,6 +35,7 @@
     font-weight: 300;
     font-style: normal;
 }
+
 
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
@@ -66,13 +85,145 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
-
 /* end reset */
 
 
 /* style */
+/* this is the page load animation */
+@keyframes title-fade-in{
+    0%{color: turquoise;}
+    80%{color: green;}
+    100%{color:var(--dark-type);}
+}
 h1{
     font-family: Metropolis;
-    font-weight: 400;
+    font-weight: 600;
     font-size: 3em;
+    animation: title-fade-in 0.5s ease 0s 1 normal both;
+}
+main{
+    background-color: var(--background-color);
+    box-sizing: border-box;/* width and height includes padding */
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    margin: auto;
+    padding: 3em;
+    height: 100vh;
+}
+section{
+    display: flex;
+    flex-direction: row wrap;
+}
+
+/* rows are children of the main */
+#row-1{
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    height: fit-content;
+    margin: 0 0 2em 0; /* control vertical gap between row 1 and 2 */
+}
+#row-2{
+    flex: 1; /* remaining height occupied after rows 1 and 3 heights are fit to content */
+    box-sizing: border-box;
+    margin: 0 0 0 0.75em;
+    height: auto;
+}
+#row-3{
+    box-sizing: border-box;
+    height: auto;
+    max-height: fit-content;
+    padding: 1em 0 0 0;
+    border-top-style: solid;
+    border-top-width: 1px;
+    border-top-color: var(--medium-grey);
+}
+
+/* columns are children of row-2 */
+#column-1{
+    flex: 1;
+}
+#column-2{
+    flex: 1;
+}
+#column-3{ /* can use column 3's flex value to control the width of the other two */
+    flex: 2;
+}
+
+#column-1, #column-2{
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 0 2em 0 0;
+}
+
+#column-1 div, #column-2 div{
+    padding: 0 0 2.5em 0;
+}
+#row-1 p{
+    box-sizing: border-box;
+    display: block;
+    font-family: metropolis;
+    font-weight: 400;
+    font-size: 1em;
+    color: var(--medium-grey);
+    padding: 0.5em;
+    border-radius: 10em;
+    border-style: solid;
+    border-color: var(--medium-grey);
+    border-width: 1px;
+}
+
+.section-title{
+    box-sizing: border-box;
+    margin: 0 0 0.75em 0;
+    display: block;
+    font-family: metropolis;
+    font-weight: 400;
+    font-size: 1.5em;
+    color: var(--medium-grey);
+
+}
+.link-list{
+    display: flex;
+    flex-direction: column;
+}
+.link-list a{
+    font-family: metropolis;
+    font-weight: 300;
+    font-size: 1.25em;
+    text-decoration: none;
+    color: var(--dark-type);
+    box-sizing: border-box;
+    display: block;
+    padding: 0 0 0.5em 0;
+}
+
+/* This is the interactive animation*/
+@keyframes hover-underline { /* animation to control underline color change */
+    0%{text-decoration-color: turquoise}
+    22%{text-decoration-color: green}
+    45%{text-decoration-color: greenyellow}
+    56%{text-decoration-color: yellow;}
+    89%{text-decoration-color: greenyellow;}
+    100%{text-decoration-color: turquoise;} /* return to beginning color for seamless loop */
+}
+.link-list a:hover{
+    text-decoration: underline;
+    text-decoration-color: blue;
+    text-decoration-thickness: 3px;
+    animation: hover-underline 6s ease-in-out infinite; /* call interactive animation */
+}
+footer p{
+    font-family: metropolis;
+    font-size: 1.25em;
+    font-weight: 400;
+    display: block;
+    color: var(--medium-grey);
+    padding: 0.75em;
+    max-width: fit-content;
 }
