@@ -103,13 +103,17 @@ h1{
     margin: 0 0.3em 0 0;
 }
 
+body{
+    max-width: 1200px; /* ideally this would be removed for best appearance */
+    background-color: var(--background-color);
+    justify-content: center;
+    margin: auto;
+}
 main{
     background-color: var(--background-color);
     box-sizing: border-box;/* width and height includes padding */
     display: flex;
     flex-flow: column;
-    justify-content: center;
-    margin: auto;
     padding: 3em;
     height: 100vh;
 }
@@ -124,10 +128,10 @@ section{
     box-sizing: border-box;
     display: flex;
     flex-direction: row wrap;
-    justify-content: space-between;
+    justify-content: start;
     align-items: center;
     height: fit-content;
-    margin: 0 0 2em 0; /* control vertical gap between row 1 and 2 */
+    margin: 0 0 3em 0; /* control vertical gap between row 1 and 2 */
 }
 #row-2{
     flex: 1; /* remaining height occupied after rows 1 and 3 heights are fit to content */
@@ -143,9 +147,10 @@ section{
     height: auto;
     max-height: fit-content;
     padding: 1em 0 0 0;
-    border-top-style: solid;
+    /* with 1200px max width, the page looks nicer without this line */
+    /* border-top-style: solid; 
     border-top-width: 1px;
-    border-top-color: var(--medium-grey);
+    border-top-color: var(--medium-grey); */
 }
 
 /* columns are children of row-2 */
