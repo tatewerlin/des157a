@@ -5,13 +5,13 @@
 }
 
 /* fonts */
-@font-face{
+@font-face{ /* unused */
     font-family: metropolis;
     src: url(fonts/metropolis-black.woff) format('woff');
     font-weight: 900;
     font-style: normal;
 }
-@font-face {
+@font-face { /* unused */
     font-family: metropolis;
     src: url(fonts/metropolis-bold.woff2) format('woff2');
     font-weight: 700;
@@ -120,14 +120,14 @@ main{
 
 section{
     display: flex;
-    flex-direction: row wrap;
+    flex-flow: row wrap;
 }
 
 /* rows are children of the main */
 #row-1{
     box-sizing: border-box;
     display: flex;
-    flex-direction: row wrap;
+    flex-flow: row wrap;
     justify-content: start;
     align-items: center;
     height: fit-content;
@@ -141,7 +141,7 @@ section{
 }
 #row-3{
     display: flex;
-    flex-direction: row wrap;
+    flex-flow: row wrap;
     justify-content: space-between;
     box-sizing: border-box;
     height: auto;
