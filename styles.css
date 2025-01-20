@@ -104,7 +104,7 @@ h1{
 }
 
 body{
-    max-width: 1200px; /* ideally this would be removed for best appearance */
+    max-width: 1200px; /*ideally this would be removed for best appearance*/
     background-color: var(--background-color);
     justify-content: center;
     margin: auto;

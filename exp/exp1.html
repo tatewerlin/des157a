@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>JavaScript Experiment 1</h1>
+    <h2>Open JS Console to interact</h2>
+    <script>
+        //this program reverses the order of an input string
+
+        //HERE (below) is the selection (text input)
+        var userInput = prompt ('Enter some text','').toLowerCase(); //prompt for input string
+        var output = ''; //output string begins empty
+        
+        //HERE (below) is the loop
+        for (var i=userInput.length-1; i>-1; i--){//begin at end of input, move toward beginning
+            output+=userInput[i]; //iterate over each letter, adding them to output string
+        }
+        //Concatenate output (to console)
+        console.log(`Your text: ${userInput}\nYour text written backwards: ${output}\n\nRefresh page to go again!`);
+    </script>
+</body>
+</html>
