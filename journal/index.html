@@ -3,9 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=chevron_left" />
+    <link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
     <title>Learning Journal</title>
 </head>
 <body>
-    <h1>Journal</h1>
+    <main>
+        <section id="column-1">
+            <h1><span class="material-symbols-outlined"><a href="../index.html">chevron_left</a></span><span>Learning Journal</span></h1>
+            <nav>
+                <ul>
+                    <li>
+                        <p>21 January, 2025</p>
+                        <a href="#article-1">Designing HTML Forms</a>
+                    </li>
+                    <li>
+                        <p>01 February, 2025</p>
+                        <a href="#">Entry 2 Placeholder</a>
+                    </li>
+                    <li>
+                        <p>01 March, 2025</p>
+                        <a href="#">Entry 3 Placeholder</a>
+                    </li>
+                </ul>
+            </nav>
+        </section>
+        <section id="column-2">
+            <article id="article-1"> <!-- id makes nav links work -->
+                <h2><span>Designing HTML Forms</span><span class="article-date">21 January, 2025</span></h2>
+                <p>
+                    <span class="special-copy">This post discusses <a href="https://uxdesign.cc/best-practices-for-form-design-ff5de6ca8e5f">this article</a> this article by Salim Ansari.</span>
+                </p>
+                <p>
+                    It's safe to say that users want to spend as little time as possible doing anything online which resembles work. 
+                    Therefore, web forms are user-adverse. 
+                    They require typing, attention, carefully placed clicks, and perhaps that the user move around so as to gather required information. 
+                    This equates to work for the user. 
+                </p>
+                <p>
+                    This reveals that forms are transactional. 
+                    The user exchanges their time and effort for some outcome achieved upon form completion. 
+                    If the effort involved in completing the form is percieved to be too great, then the transaction will appear imbalanced and the user may not complete the form. 
+                    As the article mentions, unsubmitted forms means less conversion and lost business for the form's administrator. 
+                </p>
+                <p>
+                    Thus it is the form designer's job to cause more users to complete it. 
+                    The article provides many useful insights as to how this may be achieved. 
+                    Perhaps the most interesting concept brought up was that of momentum of the user through a form. 
+                    Momentum is good and its interruption increases the liklihood that the user abandons prior to completion. 
+                    The article identifies form layout as the key driver (or potential disruptor) of momentum, explicitly in regard to the number of columns the form occupies, with more columns interrupting it and one being optimal.
+                </p>
+                <p>
+                    I think that the concept of momentum is under-applied in the article. 
+                    For example, the author notes that poorly labeled fields cause users to become confused and look in too many places. 
+                    I might add that this is a disruptor to the user's momentum as they have to stop "moving" and actively process information. 
+                    I think that this is the essential reason why confusion is bad as to fix confusion momentum is sacrificed. 
+                    This does not, however, subtract value from tips the author provides, all of which are very successful in content and communication.
+                </p>
+            </article>
+        </section>
+    </main>
+    <footer>
+        <article>
+            <p>DES 157A Interactive Media II Winter 2025</p>
+        </article>
+        <article id="contact-container">
+            <p>by Tate Werlin</p>
+            <a HREF="mailto:&#116;&#097;&#116;&#101;&#098;&#119;&#101;&#114;&#108;&#105;&#110;&#064;&#103;&#109;&#097;&#105;&#108;&#046;&#099;&#111;&#109;">Contact via email</a>
+        </article>
+    </footer>
 </body>
 </html>

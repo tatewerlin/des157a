@@ -87,6 +87,9 @@ table {
 }
 /* end reset */
 
+html{
+    font-size: 12px; /* set font size off of which rems will be based */
+}
 
 /* style */
 /* this is the page load animation */
@@ -98,9 +101,9 @@ table {
 h1{
     font-family: Metropolis;
     font-weight: 600;
-    font-size: 3em;
+    font-size: 4rem;
     animation: title-fade-in 0.5s ease 0s 1 normal both;
-    margin: 0 0.3em 0 0;
+    margin: 0 1rem 0 0;
 }
 
 body{
@@ -114,7 +117,7 @@ main{
     box-sizing: border-box;/* width and height includes padding */
     display: flex;
     flex-flow: column;
-    padding: 3em;
+    padding: 4rem 0 4rem 0;
     height: 100vh;
 }
 
@@ -131,12 +134,12 @@ section{
     justify-content: start;
     align-items: center;
     height: fit-content;
-    margin: 0 0 3em 0; /* control vertical gap between row 1 and 2 */
+    margin: 0 0 4rem 0; /* control vertical gap between row 1 and 2 */
 }
 #row-2{
     flex: 1; /* remaining height occupied after rows 1 and 3 heights are fit to content */
     box-sizing: border-box;
-    margin: 0 0 0 0.75em;
+    margin: 0 0 0 0.75rem;
     height: auto;
 }
 #row-3{
@@ -146,7 +149,7 @@ section{
     box-sizing: border-box;
     height: auto;
     max-height: fit-content;
-    padding: 1em 0 0 0;
+    padding: 2rem 0 0 0;
     /* with 1200px max width, the page looks nicer without this line */
     /* border-top-style: solid; 
     border-top-width: 1px;
@@ -155,13 +158,13 @@ section{
 
 /* columns are children of row-2 */
 #column-1{
-    flex: 1;
+    flex: 2;
 }
 #column-2{
-    flex: 1;
+    flex: 2;
 }
 #column-3{ /* can use column 3's flex value to control the width of the other two */
-    flex: 2;
+    flex: 3;
 }
 
 #column-1, #column-2{
@@ -169,22 +172,22 @@ section{
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    padding: 0 2em 0 0;
+    padding: 0 3rem 0 0;
 }
 
 #column-1 div, #column-2 div{
-    padding: 0 0 2.5em 0;
+    padding: 0 0 3.5rem 0;
 }
 
-#row-1 p{
+#row-1 p{ /* this is the little oval that says "portal page" */
     box-sizing: border-box;
     display: block;
     font-family: metropolis;
     font-weight: 400;
-    font-size: 1em;
+    font-size: 1.25rem;
     color: var(--medium-grey);
-    padding: 0.5em;
-    border-radius: 10em;
+    padding: 0.5rem;
+    border-radius: 10rem;
     border-style: solid;
     border-color: var(--medium-grey);
     border-width: 1px;
@@ -192,11 +195,11 @@ section{
 
 .section-title{
     box-sizing: border-box;
-    margin: 0 0 0.75em 0;
+    margin: 0 0 0.75rem 0;
     display: block;
     font-family: metropolis;
     font-weight: 400;
-    font-size: 1.5em;
+    font-size: 1.5rem;
     color: var(--medium-grey);
 
 }
@@ -209,12 +212,12 @@ section{
 .link-list a{
     font-family: metropolis;
     font-weight: 300;
-    font-size: 1.25em;
+    font-size: 2.25rem;
     text-decoration: none;
     color: var(--dark-type);
     box-sizing: border-box;
     display: block;
-    padding: 0 0 0.5em 0;
+    padding: 0 0 0.75rem 0;
 }
 
 /* This is the interactive animation*/
@@ -236,17 +239,17 @@ section{
 
 footer p{
     font-family: metropolis;
-    font-size: 1.25em;
+    font-size: 1.5rem;
     font-weight: 400;
     display: block;
     color: var(--medium-grey);
-    padding: 0.75em;
+    padding: 1rem;
     max-width: fit-content;
 }
 footer a{
     font-family: metropolis;
     font-weight: 300;
-    font-size: 1.25em;
+    font-size: 1.5rem; /* this should probably be the same as footer p font-size */
     text-decoration: none;
     color: var(--dark-type);
     box-sizing: border-box;
