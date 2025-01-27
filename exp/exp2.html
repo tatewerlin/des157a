@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Experiment 2</title>
+
+</head>
+<body>
+    <h1>JS Experiment 2</h1>
+    <div id="myDiv">
+    </div>
+    <script>
+        const input = prompt("Enter some text","").toUpperCase();
+        var container = document.getElementById('myDiv');
+        container.style.display = 'flex';
+        container.style.flexFlow = 'row wrap';
+        container.style.maxWidth = '50%';
+        
+        for (let i=0; i<input.length; i++){ //creates a new paragraph element for each letter
+            var newLetter = document.createElement('p'); //p element created in memory
+            newLetter.textContent = input[i]; // assign text to element
+            container.appendChild(newLetter); // p element added to DOM and will appear on HTML page
+        }
+
+
+        function rcg () { // random rgb color generating function
+            var val1 = Math.floor(Math.random() * 200); // Math.random generates floating point between 0 and 1, Math.floor rounds it down to an integer
+            var val2 = Math.floor(Math.random() * 200); // 0 to 200 set as range so that colors do not become too bright (letters become illegible)
+            var val3 = Math.floor(Math.random() * 200);
+            return `rgb(${val1}, ${val2}, ${val3})`; //return an rgb string ready to insert into css
+        }
+
+        var child = document.querySelectorAll("#myDiv p");
+        for (var i=0; i<child.length; i++){
+            if (input[i] == ' '){
+                child[i].style.backgroundColor = '#ffffff'; //if the letter assigned to the p is a space, set its background to white to appear as such
+            } else {
+                child[i].style.backgroundColor = rcg(); //call random color generator every time to get a new color for each new element
+            }
+            child[i].style.padding = '0.5em 1em 0.5em 1em'; // each should have some mass
+            child[i].style.margin = '0 0.25em 0.25em 0' // margin used for separation
+            child[i].style.color = '#ffffff'; // text color should stay the same
+        }
+
+    </script>
+</body>
+</html>
