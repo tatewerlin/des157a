@@ -251,6 +251,9 @@ h2{ /* h2s are flexbox containers with spans as children */
     /* this margin value is here to align top of article flow with top of nav */
     /* this value should be equal to the total height of the h1 and any height added by margin or padding */
 }
+#column-2 article{
+    margin: 0 0 8rem 0;
+}
 
 footer{
     display: flex;
