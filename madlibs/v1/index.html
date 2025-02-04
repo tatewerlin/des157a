@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=chevron_left" />
+    <link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <title>MadLibs v1</title>
+</head>
+<body>
+    <main>
+        <section id="column-1">
+            <h1><span class="material-symbols-outlined"><a href="../../index.html">chevron_left</a></span><span>Madlibs</span><span class="icon"><img src="images/madlibs.png" alt="vector graphic of crooked face with spiral eyes"></span></h1>
+            <p>Directions</p>
+            <p>Fill out the form with words that match the requested categories. When complete, hit submit to see your finished MadLib!</p>
+        </section>
+        <section id="column-2">
+            <form>
+                <div class="label-input-container">
+                    <label for="furniture-item">furniture item</label>
+                    <input type="text" name="furniture-item" id="furniture-item">
+                </div>
+                <div class="label-input-container">
+                    <label for="animal">animal</label>
+                    <input type="text" name="animal" id="animal">
+                </div>
+                <div class="label-input-container">
+                    <label for="verb-ing">verb ending in "ing"</label>
+                    <input type="text" name="verb-ing" id="verb-ing">
+                </div>
+                <div class="label-input-container">
+                    <label for="adjective">adjective</label>
+                    <input type="text" name="adjective" id="adjective">
+                </div>
+                <div class="label-input-container">
+                    <label for="adjective-2">adjective</label>
+                    <input type="text" name="adjective-2" id="adjective-2">
+                </div>
+                <div class="label-input-container">
+                    <label for="plural-noun">plural noun</label>
+                    <input type="text" name="plural-noun" id="plural-noun">
+                </div>
+                <div class="label-input-container">
+                    <label for="number">number</label>
+                    <input type="text" name="number" id="number">
+                </div>
+                <div class="label-input-container">
+                    <label for="noun">noun</label>
+                    <input type="text" name="noun" id="noun">
+                </div>
+                <div class="label-input-container">
+                    <label for="noun-2">noun</label>
+                    <input type="text" name="noun-2" id="noun-2">
+                </div>
+                <div id="submit-button-container">
+                    <input type="submit" name="submit" id="submit" value="submit">
+                </div>
+            </form>
+        </section>
+        <section id="overlay" class="hidden"><!--for now, manually change class (hidden, showing)-->
+            <article>
+                <h2>Your MadLib</h2>
+                <p>
+                    The first issue arose when I sat down at my (furniture item) to make my very first MadLib. 
+                    Out from under the chair popped a(n) (animal). It started (verb ending in -ing) all over my desk which 
+                    was pretty (adjective). To make matters worse the (same animal) was (adjective) and covered in (plural noun). 
+                    My brain racing at (number) miles per hour, I offered it my father's old (noun) to try and get it to leave. 
+                    The (same animal) accepted and left, but knocked over my favorite (noun) while doing so. What a mess!
+                </p>
+            </article>
+        </section>
+    </main>
+    <footer>
+        <article>
+            <p>DES 157A Interactive Media II Winter 2025</p>
+        </article>
+        <article id="contact-container">
+            <p>by Tate Werlin</p>
+            <a HREF="mailto:&#116;&#097;&#116;&#101;&#098;&#119;&#101;&#114;&#108;&#105;&#110;&#064;&#103;&#109;&#097;&#105;&#108;&#046;&#099;&#111;&#109;">Contact via email</a>
+        </article>
+    </footer>
+</body>
+</html>
