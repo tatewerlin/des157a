@@ -5,9 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=chevron_left" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=chevron_left,close" />
     <link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
     <title>MadLibs v1</title>
 </head>
 <body>
@@ -18,58 +19,61 @@
             <p>Fill out the form with words that match the requested categories. When complete, hit submit to see your finished MadLib!</p>
         </section>
         <section id="column-2">
-            <form>
+            <form id="myForm">
                 <div class="label-input-container">
-                    <label for="furniture-item">furniture item</label>
+                    <label for="furniture-item"><span>furniture item</span></label>
                     <input type="text" name="furniture-item" id="furniture-item">
                 </div>
                 <div class="label-input-container">
-                    <label for="animal">animal</label>
+                    <label for="animal"><span>animal</span></label>
                     <input type="text" name="animal" id="animal">
                 </div>
                 <div class="label-input-container">
-                    <label for="verb-ing">verb ending in "ing"</label>
+                    <label for="verb-ing"><span>verb ending in "ing"</span></label>
                     <input type="text" name="verb-ing" id="verb-ing">
                 </div>
                 <div class="label-input-container">
-                    <label for="adjective">adjective</label>
+                    <label for="adjective"><span>adjective</span></label>
                     <input type="text" name="adjective" id="adjective">
                 </div>
                 <div class="label-input-container">
-                    <label for="adjective-2">adjective</label>
+                    <label for="adjective-2"><span>adjective</span></label>
                     <input type="text" name="adjective-2" id="adjective-2">
                 </div>
                 <div class="label-input-container">
-                    <label for="plural-noun">plural noun</label>
+                    <label for="plural-noun"><span>plural noun</span></label>
                     <input type="text" name="plural-noun" id="plural-noun">
                 </div>
                 <div class="label-input-container">
-                    <label for="number">number</label>
+                    <label for="number"><span>number</span></label>
                     <input type="text" name="number" id="number">
                 </div>
                 <div class="label-input-container">
-                    <label for="noun">noun</label>
+                    <label for="noun"><span>noun</span></label>
                     <input type="text" name="noun" id="noun">
                 </div>
                 <div class="label-input-container">
-                    <label for="noun-2">noun</label>
+                    <label for="noun-2"><span>noun</span></label>
                     <input type="text" name="noun-2" id="noun-2">
                 </div>
                 <div id="submit-button-container">
-                    <input type="submit" name="submit" id="submit" value="submit">
+                    <input type="submit" name="submit" id="submit" value="Submit">
                 </div>
             </form>
         </section>
         <section id="overlay" class="hidden"><!--for now, manually change class (hidden, showing)-->
             <article>
-                <h2>Your MadLib</h2>
-                <p>
-                    The first issue arose when I sat down at my (furniture item) to make my very first MadLib. 
-                    Out from under the chair popped a(n) (animal). It started (verb ending in -ing) all over my desk which 
-                    was pretty (adjective). To make matters worse the (same animal) was (adjective) and covered in (plural noun). 
-                    My brain racing at (number) miles per hour, I offered it my father's old (noun) to try and get it to leave. 
-                    The (same animal) accepted and left, but knocked over my favorite (noun) while doing so. What a mess!
+                <h2><span id="overlay-title">Your MadLib</span><span class="material-symbols-outlined" id="overlay-x">close</span></h2>
+                <p> <!-- the span id must be identical to corresponding input id with a 'span-' prefix-->
+                    The first issue arose when I sat down at my <span class="value-displayer" id="span-furniture-item"></span> to make my very first MadLib. 
+                    Out from under the chair popped a(n) <span class="value-displayer" id="span-animal"></span>. It started <span class="value-displayer" id="span-verb-ing"></span> all over my desk which 
+                    was pretty <span class="value-displayer" id="span-adjective"></span>. To make matters worse it was <span class="value-displayer" id="span-adjective-2"></span> and covered in <span class="value-displayer" id="span-plural-noun"></span>. 
+                    My brain racing at <span class="value-displayer" id="span-number"></span> miles per hour, I offered it my father's old <span class="value-displayer" id="span-noun"></span> to try and get it to leave. 
+                    It accepted and left, but knocked over my favorite <span class="value-displayer" id="span-noun-2"></span> while doing so. What a mess!
                 </p>
+                <div id="reset-button-container">
+                    <button type="button" id="reset-button">Reset</button>
+                </div>
             </article>
         </section>
     </main>

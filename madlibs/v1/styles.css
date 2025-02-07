@@ -51,11 +51,11 @@
 /* icons */
 .material-symbols-outlined {
     font-size: 0.8em;
-  font-variation-settings:
-  'FILL' 0,
-  'wght' 400,
-  'GRAD' 0,
-  'opsz' 24
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24
 }
 
 /* http://meyerweb.com/eric/tools/css/reset/ 
@@ -218,16 +218,34 @@ form{
     transition: all 0.1s;
 }
 label{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     font-family: "Metropolis";
     font-size: 1.5rem;
     font-weight: 400;
     color: var(--medium-green);
     margin: 0 0 var(--min-dist) var(--min-dist);
 }
+label span{
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+}
+.display-error{ /* this effects the spans which are appended to the label in the case where the corresponding input is left empty */
+    display: block;
+    box-sizing: border-box;
+    max-width: min-content;
+    background-color: rgba(255, 100, 0, 0.1);
+    color: red;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+    margin: 0 0 0 0.25rem;
+    border-radius: 0.25rem;
+}
 input[type="text"]{
     font-size: 1.5rem;
     box-sizing: border-box;
-    padding: 0.4rem;
+    padding: 1rem;
     /* border-top: 1px inset var(--alt-dark);
     border-right: 1px inset var(--alt-dark);
     border-bottom: 1px inset var(--alt-dark);
@@ -252,18 +270,18 @@ input[type="text"]:focus{
     align-items: center;
     flex: 1; /* will take available horizontal space */
 }
-input[type="submit"]{
+input[type="submit"], #reset-button-container button{ /* buttons should look the same */
     color: var(--light-green);
     background-color: var(--medium-green);
     font-family: "Metropolis";
     font-size: 1.5rem;
-    padding: 0.5rem 2rem 0.4rem 2rem;
+    padding: 1rem 2rem 1rem 2rem;
     border: none;
     border-radius: 50px;
     box-shadow: 3px 3px 10px 1px rgba(20, 40, 30, 0.1);
     max-height: min-content;
 }
-input[type="submit"]:hover{
+input[type="submit"]:hover, #reset-button-container button:hover{ /* button hover behavior is the same */
     background-color: var(--dark-green);
     box-shadow: 4px 4px 10px 3px rgba(20, 40, 30, 0.14);
     transition: all 0.1s;
@@ -284,20 +302,60 @@ input[type="submit"]:hover{
 #overlay article{
     box-sizing: border-box;
     background-color: var(--light-green);
-    padding: 20px;
+    padding: 1.5rem 2.5rem 2.5rem 2.5rem;
     /* when parent has display grid and place-content center, the foloowing is not needed. */
     width: 50%; 
-    height: 50%;
+    min-width: min-content; /* when the page resizes */
+    height: min-content;
     position: absolute;
     top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
+    border: none;
+    border-radius: 10px;
 }
 #overlay.hidden {
     display: none;
 }
 .showing {
     display: block;
+}
+#overlay h2{
+    font-size: 1.5rem;
+    font-family: "Metropolis";
+    font-weight: 400;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 0 2rem 0;
+    color: var(--medium-grey);
+}
+#overlay-x{
+    font-size: 1.5rem;
+    display: block;
+    padding: 0.25rem;
+}
+#overlay-x:hover{
+    color: var(--alt-dark);
+}
+#overlay p{
+    color: var(--dark-green);
+    font-family: "Metropolis";
+    font-size: 1.75rem;
+    font-weight: 300;
+    line-height: 3rem;
+    min-width: 500px;
+    box-sizing: border-box;
+}
+.value-displayer{
+    color:var(--medium-yellow);
+    font-weight: 600;
+}
+#reset-button-container{
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    margin: 0.5em 0 0 0;
 }
 
 
