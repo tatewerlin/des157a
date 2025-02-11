@@ -1,0 +1,403 @@
+:root{
+    --background-color: #f2f6f7;
+    --medium-grey: #898989;
+    --dark-type: #101010;
+    --medium-yellow: #feb43e;
+    --alt-dark: #070707;
+    --light-green: #fbfffb;
+    --medium-green: #5b8369;
+    --dark-green: #073d1a;
+    --min-dist: 0.5rem;
+}
+
+/* fonts */
+@font-face{ /* unused */
+    font-family: metropolis;
+    src: url(../../fonts/metropolis-black.woff) format('woff');
+    font-weight: 900;
+    font-style: normal;
+}
+@font-face { /* unused */
+    font-family: metropolis;
+    src: url(../../fonts/metropolis-bold.woff2) format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+@font-face {
+    font-family: metropolis;
+    src: url(../../fonts/metropolis-semibold.woff2) format('woff2');
+    font-weight: 600;
+    font-style: normal;
+}
+@font-face {
+    font-family: metropolis;
+    src: url(../../fonts/metropolis-regular.woff) format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face{
+    font-family: metropolis;
+    src: url(../../fonts/metropolis-light.woff) format('woff');
+    font-weight: 300;
+    font-style: normal;
+}
+
+.pt-serif-regular {
+    font-family: "PT Serif", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+/* icons */
+.material-symbols-outlined {
+    font-size: 0.8em;
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24
+}
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/* end reset */
+
+html{
+    font-size: 12px;
+    /* set font size off of which rems will be based */
+    /* this value should be the same as portal page for consistent spacing*/
+}
+
+main{
+    background-color: var(--background-color);
+    box-sizing: border-box;/* width and height includes padding */
+    display: flex;
+    flex-direction: row;
+    padding: 4rem 0 4rem 0;
+    flex: 1;
+}
+
+body{
+    max-width: 1200px; /*ideally this would be removed for best appearance*/
+    background-color: var(--background-color);
+    justify-content: center;
+    margin: auto;
+    display: flex;
+    flex-direction: column; /**/
+}
+
+html, body{
+    height: 100vh; /* use entire height of viewport */
+}
+
+h1{ /* h1s are flexbox containers with spans as children */
+    display: flex;
+    color: var(--dark-green);
+    font-family: Metropolis;
+    font-weight: 600;
+    font-size: 3.5rem;
+    margin: 0 0 2.5rem 0;
+    align-items: center;
+    max-width: 100%;
+    box-sizing: border-box; /*create page load animation*/
+}
+h1 span{
+    display: block;
+}
+h1 span a{
+    color: var(--alt-dark);
+    text-decoration: none;
+}
+h1 span a:hover{
+    color: var(--medium-green);
+    transition: all 0.1s;
+}
+h1 img{
+    height: 3.5rem;
+    width: auto;
+}
+h1 .icon{
+    margin: 0 0 0 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#column-1 p:first-of-type{
+    font-weight: 600;
+    margin:0 0 var(--min-dist) 0;
+    line-height: 1.5rem; /*i added this to fix top alignment with directions paragraph and first row of form fields*/
+}
+#column-1 p{
+    color: var(--dark-green);
+    font-family: "Metropolis";
+    font-size: 1.5rem;
+    font-weight: 300;
+    line-height: 2rem;
+}
+
+#column-1{
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+}
+#column-2{
+    box-sizing: border-box;
+    flex: 7;
+    padding-top: 6rem; /* this aligns top of form with top of directions blurb*/
+}
+#column-2 article:first-of-type{
+    margin-top: 6rem;
+    /* this margin value is here to align top of article flow with top of nav */
+    /* this value should be equal to the total height of the h1 and any height added by margin or padding */
+}
+form{
+    display: flex;
+    flex-flow: row wrap;
+    box-sizing: border-box;
+    padding: 0 0 0 4rem;
+}
+.label-input-container{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    padding: 0 3rem 2rem 0;
+}
+.label-input-container:hover label{
+    color: var(--dark-green);
+    transition: all 0.1s;
+}
+.label-input-container:hover input{
+    box-shadow: 4px 4px 10px 1px rgba(20, 40, 30, 0.1);
+    transition: all 0.1s;
+}
+label{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-family: "Metropolis";
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: var(--medium-green);
+    margin: 0 0 var(--min-dist) var(--min-dist);
+}
+label span{
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+}
+.display-error{ /* this effects the spans which are appended to the label in the case where the corresponding input is left empty */
+    display: block;
+    box-sizing: border-box;
+    max-width: min-content;
+    background-color: rgba(255, 100, 0, 0.1);
+    color: red;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+    margin: 0 0 0 0.25rem;
+    border-radius: 0.25rem;
+}
+input[type="text"]{
+    font-size: 1.5rem;
+    box-sizing: border-box;
+    padding: 1rem;
+    /* border-top: 1px inset var(--alt-dark);
+    border-right: 1px inset var(--alt-dark);
+    border-bottom: 1px inset var(--alt-dark);
+    border-left: 1px inset var(--alt-dark); */
+    border: none;
+    box-shadow: 3px 3px 10px 1px rgba(20, 40, 30, 0.05);
+    border-radius: 3px;
+    color: var(--medium-grey);
+}
+input[type="text"]:focus{
+    color: var(--dark-green);
+    background-color: var(--background-color);
+    outline: 1px solid var(--dark-green);
+    outline-offset: 2px;
+    background-color: #ffffff;
+    box-shadow: 4px 4px 10px 1px rgba(240, 255, 250, 0.5);
+}
+#submit-button-container{
+    margin: 0 3rem 0 0; /* the margin right should be = to the margin right of the inputs/form for alignment */
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    flex: 1; /* will take available horizontal space */
+}
+input[type="submit"], #reset-button-container button{ /* buttons should look the same */
+    color: var(--light-green);
+    background-color: var(--medium-green);
+    font-family: "Metropolis";
+    font-size: 1.5rem;
+    padding: 1rem 2rem 1rem 2rem;
+    border: none;
+    border-radius: 50px;
+    box-shadow: 3px 3px 10px 1px rgba(20, 40, 30, 0.1);
+    max-height: min-content;
+}
+input[type="submit"]:hover, #reset-button-container button:hover{ /* button hover behavior is the same */
+    background-color: var(--dark-green);
+    box-shadow: 4px 4px 10px 3px rgba(20, 40, 30, 0.14);
+    transition: all 0.1s;
+}
+
+/* overlay styles */
+#overlay{
+    /* no parent, will position relative to window */
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.5);
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    place-content: center;
+}
+#overlay article{
+    box-sizing: border-box;
+    background-color: var(--light-green);
+    padding: 1.5rem 2.5rem 2.5rem 2.5rem;
+    /* when parent has display grid and place-content center, the foloowing is not needed. */
+    width: 50%; 
+    min-width: min-content; /* when the page resizes */
+    height: min-content;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: none;
+    border-radius: 10px;
+}
+#overlay.hidden {
+    display: none;
+}
+.showing {
+    display: block;
+}
+#overlay h2{
+    font-size: 1.5rem;
+    font-family: "Metropolis";
+    font-weight: 400;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 0 2rem 0;
+    color: var(--medium-grey);
+}
+#overlay-x{
+    font-size: 1.5rem;
+    display: block;
+    padding: 0.25rem;
+}
+#overlay-x:hover{
+    color: var(--alt-dark);
+}
+#overlay p{
+    color: var(--dark-green);
+    font-family: "Metropolis";
+    font-size: 1.75rem;
+    font-weight: 300;
+    line-height: 3rem;
+    min-width: 500px;
+    box-sizing: border-box;
+}
+.value-displayer{
+    color:var(--medium-yellow);
+    font-weight: 600;
+}
+#reset-button-container{
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    margin: 0.5em 0 0 0;
+}
+
+
+/*footer styles*/
+footer{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    box-sizing: border-box;
+    height: auto;
+    max-height: fit-content;
+    padding: 0 0 0 0;
+    margin: 0 0 4rem 0;
+}
+footer p{
+    font-family: metropolis;
+    font-size: 1.5rem;
+    font-weight: 400;
+    display: block;
+    color: var(--medium-green);
+    padding: 1rem 0 1rem 0;
+    max-width: fit-content;
+}
+footer a{
+    font-family: metropolis;
+    font-weight: 300;
+    font-size: 1.5rem; /* this should probably be the same as footer p font-size */
+    text-decoration: none;
+    color: var(--dark-type);
+    box-sizing: border-box;
+    display: block;
+    margin: 0 0 0 1rem;
+}
+#contact-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-decoration: none;
+}
+#contact-container a:hover{
+    text-decoration: underline;
+    text-decoration-color: turquoise;
+    text-decoration-thickness: 3px;
+    animation: hover-underline 6s ease-in-out infinite; /* call interactive animation */
+}
