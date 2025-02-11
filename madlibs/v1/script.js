@@ -9,11 +9,11 @@
     const inputValues = [];
     const spanIDs = [];
     let labelHasError = [];
-
     for(let i=0; i<inputIDs.length; i++){
         labelHasError[i]=false;
     }
     let validInputCounter = 0; // increments with each true text input upon submit input
+    
     myForm.addEventListener('submit', function(e){ //runs when submit button clicked
         e.preventDefault(); // stop page from refreshing
         for(let i=0; i<inputIDs.length; i++){ // iterate over inputIDs
@@ -39,7 +39,6 @@
                 labelAddOn.setAttribute('class', 'display-error'); // set its class for future access
                 currentLabel.appendChild(labelAddOn); // append the span to the label
                 labelHasError[i] =true; // label now has a span, so this gets set to true
-
             }
 
             let containerSpan = document.querySelector(`#${spanIDs[i]}`); // access relevant span using spanIDs array
@@ -54,6 +53,7 @@
             myOverlay.setAttribute('class','.showing');
         } else {
             console.log('not enough values');
+            removeTempSpans(); //[FIX A] this prevents duplicate strings in the same output span, fixes bugs [1] and [2]
         }
     });
 
@@ -63,6 +63,7 @@
             tempSpans[i].remove(); // remove all temporary spans when the overlay is closed. They will be repopulated when submit is pressed again.
         }
     }
+
     function resetInputs(){ // reset the input values
         for(let i=0; i<inputIDs.length; i++){
             document.querySelector(`#${inputIDs[i]}`).value = '';
@@ -82,3 +83,6 @@
         resetInputs();
     });
 })();
+//bugs:
+//[1] *all forms filled* SUBMIT > X > *one field deleted* SUBMIT > *same field refilled* > SUBMIT = results in duplicate strings in all but the refilled field [FIXED: FIX A]
+//[2] *one field untrue* SUBMIT > *field made true* > SUBMIT = results in duplicate strings for all but the modified field [FIXED: FIX A]
