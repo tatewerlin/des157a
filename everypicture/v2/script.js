@@ -28,6 +28,7 @@
                 }
             }
             modeSelector = i; // the mode selector should be equal to the index of the button being clicked
+            
             // the following handles visibility of "controls" hover h2
             console.log(`mode selector: ${modeSelector}`);
             if (i==0){
