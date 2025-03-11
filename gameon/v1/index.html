@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=chevron_left" />
+    <link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=PT+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <title>Every Picture Experiment</title>
+    <script src="script.js" defer></script>
+    <title>Game On v1</title>
+</head>
+<body>
+    <nav>
+        <h1><span class="material-symbols-outlined"><a href="../../index.html">chevron_left</a></span><span>ColorGuessr</span><span class="page-specifier">v1</span></h1>
+    </nav>
+    <main>
+        <section id="tile" class="main-column">
+        </section>
+        <section id="interactivity" class="main-column">
+            <div id="rcontrol" class="control">
+                <h3><span>R</span></h3>
+                <p><span>###</span></p>
+                <input type="range" id="rslider" min="0" max="255" value="127">
+            </div>
+            <div id="gcontrol" class="control">
+                <h3><span>G</span></h3>
+                <p><span>###</span></p>
+                <input type="range" id="gslider" min="0" max="255" value="127">
+            </div>
+            <div id="bcontrol" class="control">
+                <h3><span>B</span></h3>
+                <p><span>###</span></p>
+                <input type="range" id="bslider" min="0" max="255" value="127">
+            </div>
+            <div id="button-panel">
+                <button id="guess">Guess</button>
+                <button id="reset">Reset</button>
+            </div>
+            <div id="instructions">
+                <p>
+                    Your goal is to guess the RGB values of the color on the left.<br>
+                    Move the sliders to choose values.<br>
+                    Click 'guess' when you think you've got it.
+                </p>
+            </div>
+
+        </section>
+    </main>
+</body>
+</html>
